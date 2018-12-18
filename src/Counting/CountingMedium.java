@@ -146,8 +146,8 @@ public class CountingMedium extends javax.swing.JFrame {
         
         iconQuestion = new ImageIcon(getClass().getResource("/res/counting/medium/7.png"));
         iconAnswer1 = new ImageIcon(getClass().getResource("/res/counting/medium/bn/7_1.png"));
-        iconAnswer2 = new ImageIcon(getClass().getResource("/res/counting/medium/bn/8.png"));
-        iconAnswer3 = new ImageIcon(getClass().getResource("/res/counting/medium/bn/6.png"));
+        iconAnswer2 = new ImageIcon(getClass().getResource("/res/counting/medium/bn/8_1.png"));
+        iconAnswer3 = new ImageIcon(getClass().getResource("/res/counting/medium/bn/6_1.png"));
         Counting.QuestionMedium qstm7= new Counting.QuestionMedium(iconQuestion, iconAnswer1, iconAnswer2, iconAnswer3, iconAnswer1, "1");
         questionmedium.add(qstm7);
         
@@ -176,10 +176,13 @@ public class CountingMedium extends javax.swing.JFrame {
     
     private Counting.QuestionMedium randomQuestionMedium() {
         Counting.QuestionMedium qstsmedium;
-        randMedium = (int) (Math.random() * (6 - 1));
+        randMedium = (int) (Math.random() * (9 - 1));
         qstsmedium = questionmedium.get(randMedium);
 
         System.out.println(randMedium);
+        symbn1.setVisible(false);
+        symbn2.setVisible(false);
+        symbn3.setVisible(false);
 
         return qstsmedium;
     }
@@ -301,7 +304,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -329,7 +332,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -340,7 +343,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     scoreFalse += 1;
                     wrong.setText(scoreFalse + "");
 
-                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   " + qstShow.getAns() + "   ");
+                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "   ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
@@ -358,7 +361,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -383,7 +386,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -400,9 +403,9 @@ public class CountingMedium extends javax.swing.JFrame {
                         checkNum = 1;
 
                         Image imageQuestion = qstShow.getImageQuestion().getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
-                        Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                        Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                        Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
+                        Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                        Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                        Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
 
                         frame.setIcon(new ImageIcon(imageQuestion));
                         bn1.setIcon(new ImageIcon(answer1));
@@ -423,7 +426,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -431,7 +434,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     } catch (Exception ex) {
                         Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   " + qstShow.getAns() + "   ");
+                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "   ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
@@ -442,9 +445,9 @@ public class CountingMedium extends javax.swing.JFrame {
                             qstShow = randomQuestionMedium();
 
                             Image imageQuestion = qstShow.getImageQuestion().getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
-                            Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                            Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                            Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
+                            Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                            Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                            Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
 
                             frame.setIcon(new ImageIcon(imageQuestion));
                             bn1.setIcon(new ImageIcon(answer1));
@@ -463,7 +466,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -492,7 +495,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -520,7 +523,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -531,7 +534,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     scoreFalse += 1;
                     wrong.setText(scoreFalse + "");
 
-                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   " + qstShow.getAns() + "   ");
+                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "   ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
@@ -548,7 +551,7 @@ public class CountingMedium extends javax.swing.JFrame {
                             symbn2.setVisible(true);
                             symbn2.setIcon(symbnIncorrect);
                             Clip correct = AudioSystem.getClip();
-                            AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                            AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                             correct.open(audio);
                             correct.start();
                             Thread.sleep(800);
@@ -575,7 +578,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -592,9 +595,9 @@ public class CountingMedium extends javax.swing.JFrame {
                         checkNum = 1;
 
                         Image imageQuestion = qstShow.getImageQuestion().getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
-                        Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                        Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                        Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
+                        Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                        Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                        Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
 
                         frame.setIcon(new ImageIcon(imageQuestion));
                         bn1.setIcon(new ImageIcon(answer1));
@@ -615,7 +618,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -623,7 +626,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     } catch (Exception ex) {
                         Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   " + qstShow.getAns() + "   ");
+                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "   ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
@@ -635,9 +638,9 @@ public class CountingMedium extends javax.swing.JFrame {
                             
 
                             Image imageQuestion = qstShow.getImageQuestion().getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
-                            Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                            Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                            Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
+                            Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                            Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                            Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
 
                             frame.setIcon(new ImageIcon(imageQuestion));
                             bn1.setIcon(new ImageIcon(answer1));
@@ -656,7 +659,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -685,7 +688,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -715,7 +718,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -726,7 +729,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     scoreFalse += 1;
                 wrong.setText(scoreFalse + "");
                 
-                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   " + qstShow.getAns() + "   ");
+                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "   ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
@@ -750,7 +753,7 @@ public class CountingMedium extends javax.swing.JFrame {
                             symbn3.setVisible(true);
                             symbn3.setIcon(symbnIncorrect);
                             Clip correct = AudioSystem.getClip();
-                            AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                            AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                             correct.open(audio);
                             correct.start();
                             Thread.sleep(800);
@@ -777,7 +780,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -794,9 +797,9 @@ public class CountingMedium extends javax.swing.JFrame {
                         checkNum = 1;
 
                         Image imageQuestion = qstShow.getImageQuestion().getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
-                        Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                        Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                        Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
+                        Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                        Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                        Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
 
                         frame.setIcon(new ImageIcon(imageQuestion));
                         bn1.setIcon(new ImageIcon(answer1));
@@ -817,7 +820,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -825,7 +828,7 @@ public class CountingMedium extends javax.swing.JFrame {
                     } catch (Exception ex) {
                         Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   " + qstShow.getAns() + "   ");
+                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "   ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
@@ -836,9 +839,9 @@ public class CountingMedium extends javax.swing.JFrame {
                             qstShow = randomQuestionMedium();
 
                             Image imageQuestion = qstShow.getImageQuestion().getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
-                            Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                            Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
-                            Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(180, 150, Image.SCALE_SMOOTH);
+                            Image answer1 = qstShow.getAnswer1().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                            Image answer2 = qstShow.getAnswer2().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
+                            Image answer3 = qstShow.getAnswer3().getImage().getScaledInstance(90, 70, Image.SCALE_SMOOTH);
 
                             frame.setIcon(new ImageIcon(imageQuestion));
                             bn1.setIcon(new ImageIcon(answer1));
@@ -857,7 +860,7 @@ public class CountingMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);

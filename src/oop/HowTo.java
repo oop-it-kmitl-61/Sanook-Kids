@@ -5,6 +5,10 @@
  */
 package oop;
 
+import static Subtraction.Ch4SubMedium.HEIGHT;
+import static Subtraction.Ch4SubMedium.TITLE;
+import static Subtraction.Ch4SubMedium.WIDTH;
+
 /**
  *
  * @author Husna
@@ -14,8 +18,22 @@ public class HowTo extends javax.swing.JFrame {
     /**
      * Creates new form HowTo
      */
+    
+    public static final String TITLE = "สนุก Kids";
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 480;
+    
     public HowTo() {
         initComponents();
+        setTitle(TITLE);
+        setSize(WIDTH, HEIGHT);
+        setResizable(false);
+        setLocationRelativeTo(null);
+    }
+    
+    public void close() {
+        this.setVisible(false);
+        this.dispose();
     }
 
     /**
@@ -27,17 +45,36 @@ public class HowTo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        next4 = new javax.swing.JButton();
         frame = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        frame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/how to.png"))); // NOI18N
+        next4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/learnnumber/previous.png"))); // NOI18N
+        next4.setOpaque(false);
+        next4.setContentAreaFilled(false);
+        next4.setBorderPainted(false);
+        next4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                next4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(next4);
+        next4.setBounds(0, 0, 40, 60);
+
+        frame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/how to2.png"))); // NOI18N
         getContentPane().add(frame);
         frame.setBounds(0, -10, 810, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void next4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next4ActionPerformed
+        Opening o = new Opening();
+        o.setVisible(true);
+        close();
+    }//GEN-LAST:event_next4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -76,5 +113,8 @@ public class HowTo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel frame;
+    private javax.swing.JButton next2;
+    private javax.swing.JButton next3;
+    private javax.swing.JButton next4;
     // End of variables declaration//GEN-END:variables
 }

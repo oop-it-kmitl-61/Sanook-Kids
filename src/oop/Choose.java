@@ -62,6 +62,7 @@ public class Choose extends javax.swing.JFrame {
         bn_ch4 = new javax.swing.JButton();
         bn_ch2 = new javax.swing.JButton();
         bn_ch1 = new javax.swing.JButton();
+        next4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
@@ -125,6 +126,18 @@ public class Choose extends javax.swing.JFrame {
         getContentPane().add(bn_ch1);
         bn_ch1.setBounds(40, 60, 220, 170);
 
+        next4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/learnnumber/previous.png"))); // NOI18N
+        next4.setOpaque(false);
+        next4.setContentAreaFilled(false);
+        next4.setBorderPainted(false);
+        next4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                next4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(next4);
+        next4.setBounds(0, 0, 40, 60);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/choose/chosse.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-150, 0, 1020, 500);
@@ -171,6 +184,12 @@ public class Choose extends javax.swing.JFrame {
         close();
     }//GEN-LAST:event_bn_ch1ActionPerformed
 
+    private void next4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next4ActionPerformed
+        Opening o = new Opening();
+        o.setVisible(true);
+        close();
+    }//GEN-LAST:event_next4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -215,5 +234,6 @@ public class Choose extends javax.swing.JFrame {
     private javax.swing.JButton bn_ch6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JButton next4;
     // End of variables declaration//GEN-END:variables
 }

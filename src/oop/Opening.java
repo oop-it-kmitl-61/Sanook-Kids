@@ -102,6 +102,11 @@ public class Opening extends javax.swing.JFrame{
         bn_ex.setBounds(630, 340, 110, 50);
 
         bn_how.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bnhow1.png"))); // NOI18N
+        bn_how.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bn_howActionPerformed(evt);
+            }
+        });
         getContentPane().add(bn_how);
         bn_how.setBounds(350, 340, 160, 50);
 
@@ -135,6 +140,12 @@ public class Opening extends javax.swing.JFrame{
     private void bn_playMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_playMouseEntered
      
     }//GEN-LAST:event_bn_playMouseEntered
+
+    private void bn_howActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bn_howActionPerformed
+        HowTo h = new HowTo();
+        h.setVisible(true);
+        close();
+    }//GEN-LAST:event_bn_howActionPerformed
 
     
     

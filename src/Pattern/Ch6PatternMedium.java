@@ -9,6 +9,7 @@ import static Pattern.Ch6Pattern.HEIGHT;
 import static Pattern.Ch6Pattern.WIDTH;
 import Sounds.CorrectSound;
 import static Subtraction.Ch4SubEasy1.TITLE;
+import Subtraction.Ch4SubHard;
 
 import java.awt.Font;
 import java.awt.Image;
@@ -309,16 +310,22 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
                     correct.close();
                 } catch (Exception ex) {
-                    Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                int choice = JOptionPane.showOptionDialog(null, "Correct and Finish", "Correct", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                scoreEarn += 1;
+                sc.setText(scoreEarn + "");
+
+                JLabel label1 = new JLabel("ตอบถูก  " + scoreEarn + " ข้อ        " + "ตอบผิด  " + scoreFalse + " ข้อ");
+                label1.setFont(new Font("BoonJot", Font.PLAIN, 20));
+
+                int choice = JOptionPane.showOptionDialog(null, label1, "คะแนนรวม", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
                 if (choice == 0) {
                     Choose c = new Choose();
                     c.setVisible(true);
@@ -331,49 +338,54 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
+
+                    scoreFalse += 1;
+                    wrong.setText(scoreFalse + "");
+
                     JLabel label = new JLabel("คำตอบที่ถูกต้องก็คือ   ข้อ " + qstShow.getAns() + "     ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
-                    int choice = JOptionPane.showOptionDialog(null, "Correct and Finish", "Wrong", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                    JLabel label1 = new JLabel("ตอบถูก  " + scoreEarn + " ข้อ        " + "ตอบผิด  " + scoreFalse + " ข้อ");
+                    label1.setFont(new Font("BoonJot", Font.PLAIN, 20));
+
+                    int choice = JOptionPane.showOptionDialog(null, label1, "คะแนนรวม", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
                     if (choice == 0) {
                         Choose c = new Choose();
                         c.setVisible(true);
                         close();
-
-                        //                        scoreFalse += 1;
-                        //                        wrong.setText(scoreFalse + "");
-                    } else {
-                        try {
-                            symbn3.setVisible(true);
-                            symbn3.setIcon(symbnIncorrect);
-                            Clip correct = AudioSystem.getClip();
-                            AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
-                            correct.open(audio);
-                            correct.start();
-                            Thread.sleep(800);
-                            correct.close();
-                        } catch (Exception ex) {
-                            Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                        timer = new Timer(700, new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent ae) {
-                                symbn3.setVisible(false);
-                                timer.stop();
-                            }
-                        });
-                        timer.start();
-                        checkNum = 1;
                     }
+
+                } else {
+                    try {
+                        symbn3.setVisible(true);
+                        symbn3.setIcon(symbnIncorrect);
+                        Clip correct = AudioSystem.getClip();
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
+                        correct.open(audio);
+                        correct.start();
+                        Thread.sleep(800);
+                        correct.close();
+                    } catch (Exception ex) {
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    timer = new Timer(700, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent ae) {
+                            symbn3.setVisible(false);
+                            timer.stop();
+                        }
+                    });
+                    timer.start();
+                    checkNum += 1;
                 }
             }
 
@@ -383,13 +395,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
                     correct.close();
                 } catch (Exception ex) {
-                    Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 timer = new Timer(800, new ActionListener() {
@@ -423,13 +435,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     JLabel label = new JLabel("คำตอบที่ถูกต้องก็คือ   ข้อ " + qstShow.getAns() + "     ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
@@ -463,13 +475,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     timer = new Timer(700, new ActionListener() {
                         @Override
@@ -492,16 +504,22 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
                     correct.close();
                 } catch (Exception ex) {
-                    Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                int choice = JOptionPane.showOptionDialog(null, "Correct and Finish", "Correct", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                scoreEarn += 1;
+                sc.setText(scoreEarn + "");
+
+                JLabel label1 = new JLabel("ตอบถูก  " + scoreEarn + " ข้อ        " + "ตอบผิด  " + scoreFalse + " ข้อ");
+                label1.setFont(new Font("BoonJot", Font.PLAIN, 20));
+
+                int choice = JOptionPane.showOptionDialog(null, label1, "คะแนนรวม", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
                 if (choice == 0) {
                     Choose c = new Choose();
                     c.setVisible(true);
@@ -514,49 +532,52 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                    scoreFalse += 1;
+                    wrong.setText(scoreFalse + "");
+
                     JLabel label = new JLabel("คำตอบที่ถูกต้องก็คือ   ข้อ " + qstShow.getAns() + "     ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
-                    int choice = JOptionPane.showOptionDialog(null, "Correct and Finish", "Wrong", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                    JLabel label1 = new JLabel("ตอบถูก  " + scoreEarn + " ข้อ        " + "ตอบผิด  " + scoreFalse + " ข้อ");
+                    label1.setFont(new Font("BoonJot", Font.PLAIN, 20));
+
+                    int choice = JOptionPane.showOptionDialog(null, label1, "คะแนนรวม", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
                     if (choice == 0) {
                         Choose c = new Choose();
                         c.setVisible(true);
                         close();
-
-                        //                        scoreFalse += 1;
-                        //                        wrong.setText(scoreFalse + "");
-                    } else {
-                        try {
-                            symbn2.setVisible(true);
-                            symbn2.setIcon(symbnIncorrect);
-                            Clip correct = AudioSystem.getClip();
-                            AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
-                            correct.open(audio);
-                            correct.start();
-                            Thread.sleep(800);
-                            correct.close();
-                        } catch (Exception ex) {
-                            Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                        timer = new Timer(700, new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent ae) {
-                                symbn2.setVisible(false);
-                                timer.stop();
-                            }
-                        });
-                        timer.start();
-                        checkNum = 1;
                     }
+                } else {
+                    try {
+                        symbn2.setVisible(true);
+                        symbn2.setIcon(symbnIncorrect);
+                        Clip correct = AudioSystem.getClip();
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
+                        correct.open(audio);
+                        correct.start();
+                        Thread.sleep(800);
+                        correct.close();
+                    } catch (Exception ex) {
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    timer = new Timer(700, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent ae) {
+                            symbn2.setVisible(false);
+                            timer.stop();
+                        }
+                    });
+                    timer.start();
+                    checkNum += 1;
                 }
             }
 
@@ -566,13 +587,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
                     correct.close();
                 } catch (Exception ex) {
-                    Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 timer = new Timer(800, new ActionListener() {
@@ -606,13 +627,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     JLabel label = new JLabel("คำตอบที่ถูกต้องก็คือ   ข้อ " + qstShow.getAns() + "     ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
@@ -646,13 +667,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     timer = new Timer(700, new ActionListener() {
                         @Override
@@ -676,16 +697,22 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
                     correct.close();
                 } catch (Exception ex) {
-                    Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                int choice = JOptionPane.showOptionDialog(null, "Correct and Finish", "Correct", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                scoreEarn += 1;
+                sc.setText(scoreEarn + "");
+
+                JLabel label1 = new JLabel("ตอบถูก  " + scoreEarn + " ข้อ        " + "ตอบผิด  " + scoreFalse + " ข้อ");
+                label1.setFont(new Font("BoonJot", Font.PLAIN, 20));
+
+                int choice = JOptionPane.showOptionDialog(null, label1, "คะแนนรวม", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
                 if (choice == 0) {
                     Choose c = new Choose();
                     c.setVisible(true);
@@ -698,40 +725,43 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
-                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() +"    ");
+                    scoreFalse += 1;
+                    wrong.setText(scoreFalse + "");
+
+                    JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "    ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
-                    int choice = JOptionPane.showOptionDialog(null, "Correct and Finish", "Wrong", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+                    JLabel label1 = new JLabel("ตอบถูก  " + scoreEarn + " ข้อ        " + "ตอบผิด  " + scoreFalse + " ข้อ");
+                    label1.setFont(new Font("BoonJot", Font.PLAIN, 20));
+
+                    int choice = JOptionPane.showOptionDialog(null, label1, "คะแนนรวม", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
                     if (choice == 0) {
                         Choose c = new Choose();
                         c.setVisible(true);
                         close();
                     }
-
-                    //                    scoreFalse += 1;
-                    //                    wrong.setText(scoreFalse + "");
                 } else {
                     try {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     timer = new Timer(700, new ActionListener() {
                         @Override
@@ -741,7 +771,7 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         }
                     });
                     timer.start();
-                    checkNum = 1;
+                    checkNum += 1;
                 }
             }
         } else {
@@ -750,13 +780,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
                     correct.close();
                 } catch (Exception ex) {
-                    Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 timer = new Timer(800, new ActionListener() {
@@ -790,13 +820,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     JLabel label = new JLabel("คำตอบที่ถูกต้องคือ   ข้อ " + qstShow.getAns() + "    ");
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
@@ -830,13 +860,13 @@ public class Ch6PatternMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
                         correct.close();
                     } catch (Exception ex) {
-                        Logger.getLogger(Ch6PatternMedium.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Ch4SubHard.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     timer = new Timer(700, new ActionListener() {
                         @Override

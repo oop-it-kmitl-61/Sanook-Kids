@@ -77,7 +77,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
         bn3.setText(qstShow.getAnswer3());
         sc.setText(scoreEarn + "");
         wrong.setText(scoreFalse + "");
-        play();
+      
     }
 
     public String[] getImages() {
@@ -86,17 +86,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
         return imagesList;
     }
 
-    public void play() {
-        try {
-            File file = new File("mario-s-way.wav");
-            Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(file));
-            clip.start();
-            Thread.sleep(clip.getMicrosecondLength());
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-        }
-    }
+    
 
     private void createQuestion() {
         question = new ArrayList<Question>();
@@ -364,7 +354,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -376,9 +366,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                 scoreEarn += 1;
                 sc.setText(scoreEarn + "");
 
-//                TotalScore t = new TotalScore();
-//                t.setVisible(true);
-//                close();
+
                 JLabel label1 = new JLabel("ตอบถูก  " + scoreEarn + " ข้อ        " + "ตอบผิด  " + scoreFalse + " ข้อ");
                 label1.setFont(new Font("BoonJot", Font.PLAIN, 20));
                
@@ -396,7 +384,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -428,7 +416,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -453,7 +441,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -491,7 +479,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -529,7 +517,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -559,7 +547,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -587,7 +575,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -613,14 +601,12 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         close();
                     }
 
-//                    scoreFalse += 1;
-//                    wrong.setText(scoreFalse + "");
                 } else {
                     try {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -645,7 +631,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -683,7 +669,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -721,7 +707,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -738,6 +724,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                     });
                     timer.start();
                     checkNum += 1;
+                    
                 }
             }
         }
@@ -752,7 +739,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -780,7 +767,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -810,7 +797,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -835,7 +822,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -873,7 +860,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -911,7 +898,7 @@ public class Ch4SubEasy1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);

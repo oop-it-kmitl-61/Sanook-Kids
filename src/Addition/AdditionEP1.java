@@ -304,7 +304,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -334,7 +334,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -366,7 +366,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -391,7 +391,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -429,7 +429,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -467,7 +467,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -497,7 +497,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -525,7 +525,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -558,7 +558,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -583,7 +583,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -621,7 +621,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -659,7 +659,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -689,7 +689,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -717,7 +717,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -747,7 +747,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -772,7 +772,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -810,7 +810,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -822,7 +822,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                     label.setFont(new Font("BoonJot", Font.PLAIN, 20));
                     JOptionPane.showMessageDialog(null, label, "เฉลย", JOptionPane.INFORMATION_MESSAGE, icon);
 
-                    timer = new Timer(800, new ActionListener() {
+                    timer = new Timer(1000, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent ae) {
                             symbn3.setVisible(false);
@@ -848,7 +848,7 @@ public class AdditionEP1 extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);

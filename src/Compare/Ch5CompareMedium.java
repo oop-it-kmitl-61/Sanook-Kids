@@ -314,7 +314,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -344,7 +344,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -376,7 +376,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -401,7 +401,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                     symbn1.setVisible(true);
                     symbn1.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -439,7 +439,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -477,7 +477,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn1.setVisible(true);
                         symbn1.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -506,7 +506,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -534,7 +534,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -567,7 +567,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -592,7 +592,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                     symbn2.setVisible(true);
                     symbn2.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -630,7 +630,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -668,7 +668,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn2.setVisible(true);
                         symbn2.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -697,7 +697,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -725,7 +725,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -755,7 +755,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -780,7 +780,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                     symbn3.setVisible(true);
                     symbn3.setIcon(symbnCorrect);
                     Clip correct = AudioSystem.getClip();
-                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/correct-answer.wav"));
+                    AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/correct-answer.wav"));
                     correct.open(audio);
                     correct.start();
                     Thread.sleep(900);
@@ -818,7 +818,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
@@ -856,7 +856,7 @@ public class Ch5CompareMedium extends javax.swing.JFrame {
                         symbn3.setVisible(true);
                         symbn3.setIcon(symbnIncorrect);
                         Clip correct = AudioSystem.getClip();
-                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/wrong-sound.wav"));
+                        AudioInputStream audio = AudioSystem.getAudioInputStream(CorrectSound.class.getResourceAsStream("/res/sounds/wrong-sound.wav"));
                         correct.open(audio);
                         correct.start();
                         Thread.sleep(800);
